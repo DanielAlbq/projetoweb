@@ -36,6 +36,7 @@
                 <option value="1">IMC</option>
                 <option value="2">Percentual</option>
                 <option value="3">Ordenação</option>
+                <option value="4">Busca CEP</option>
             </select>
             <br>
             <hr>
@@ -60,6 +61,13 @@
                 <input class="form-control" id="numeros" type="text"><br>
                 <button class="btn btn-success" onclick="calculaOrdenacao()">Ordenar</button><br>
                 <label id="resultadoOrdenacao"></label>
+            </div>
+            <div id="divBuscaCEP">
+                <label for="">Informe o CEP</label>
+                <input class="form-control" type="number">
+                <br>
+                <button class="btn btn-primary" onclick="buscaEndereco()">Buscar Endereço</button>
+                <p id="pResutaldoCEP"></p>
             </div>
         </div>
     </div>
