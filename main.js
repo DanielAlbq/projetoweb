@@ -5,14 +5,24 @@ function mudaServico() {
         document.getElementById("divIMC").style.display = 'block';
         document.getElementById("divPorcento").style.display = 'none';
         document.getElementById("divOrdenacao").style.display = 'none';
+        document.getElementById("divBuscaCEP").style.display = 'none';
     } else if (servico == 2) {
         document.getElementById("divIMC").style.display = 'none';
         document.getElementById("divPorcento").style.display = 'block';
         document.getElementById("divOrdenacao").style.display = 'none';
+        document.getElementById("divBuscaCEP").style.display = 'none';
     } else if (servico == 3) {
         document.getElementById("divIMC").style.display = 'none';
         document.getElementById("divPorcento").style.display = 'none';
         document.getElementById("divOrdenacao").style.display = 'block';
+        document.getElementById("divBuscaCEP").style.display = 'none';
+    }
+
+    else if (servico == 4) {
+        document.getElementById("divIMC").style.display = 'none';
+        document.getElementById("divPorcento").style.display = 'none';
+        document.getElementById("divOrdenacao").style.display = 'none';
+        document.getElementById("divBuscaCEP").style.display = 'block';
     }
 }
 
@@ -38,4 +48,13 @@ function calculaOrdenacao() {
     let numeroFinal = numeros.split(",");
     numeroFinal.sort();
     document.getElementById("resultadoOrdenacao").innerHTML = numeroFinal;
+}
+
+async function buscaEndereco() {
+    let cep = document.getElementById("endereco").value;
+    const resposta = await fetch('https://brasilapi.com.br/api/cep/v1/'+cep);
+    const dados = await resposta.json();
+    console.log(dados['city']);
+    document.getElementById("pResultadoCEP").innerHTML = dados['city'] + ' - ' + dados['state'] + ' - ' + dados['street'];
+
 }

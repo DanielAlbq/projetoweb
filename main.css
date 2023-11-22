@@ -15,3 +15,10 @@ body {
 input[type="checkbox"] {
     border: #454d6b 1px solid;
 }
+
+#foto{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
